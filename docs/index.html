@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>@three-ws/create-agent: One command from a sentence to a rigged, animated 3D agent you can emb</title>
+<meta name="description" content="One command from a sentence to a rigged, animated 3D agent you can embed anywhere. npm create @three-ws/agent &quot;a friendly cartoon astronaut&quot;">
+<link rel="canonical" href="https://nirholas.github.io/create-agent/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="three.ws">
+<meta property="og:title" content="@three-ws/create-agent">
+<meta property="og:description" content="One command from a sentence to a rigged, animated 3D agent you can embed anywhere. npm create @three-ws/agent &quot;a friendly cartoon astronaut&quot;">
+<meta property="og:url" content="https://nirholas.github.io/create-agent/">
+<meta property="og:image" content="https://nirholas.github.io/create-agent/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="@three-ws/create-agent">
+<meta name="twitter:description" content="One command from a sentence to a rigged, animated 3D agent you can embed anywhere. npm create @three-ws/agent &quot;a friendly cartoon astronaut&quot;">
+<meta name="twitter:image" content="https://nirholas.github.io/create-agent/og.png">
+<meta name="keywords" content="three.ws, 3d, avatar, agent, text-to-3d, glb, gltf, rigging, web-component, scaffold, create, ai-agents">
+<link rel="alternate" type="text/plain" href="llms.txt" title="llms.txt">
+<link rel="icon" href="https://three.ws/three-ws-mcp-icon.svg" type="image/svg+xml">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"@three-ws/create-agent","description":"One command from a sentence to a rigged, animated 3D agent you can embed anywhere. npm create @three-ws/agent \"a friendly cartoon astronaut\"","codeRepository":"https://github.com/nirholas/create-agent","programmingLanguage":"JavaScript","license":"https://spdx.org/licenses/Apache-2.0.html","version":"0.1.0","url":"https://nirholas.github.io/create-agent/","author":{"@type":"Organization","name":"three.ws","url":"https://three.ws"},"keywords":"three.ws, 3d, avatar, agent, text-to-3d, glb, gltf, rigging, web-component, scaffold, create, ai-agents"}</script>
+<style>:root{--bg:#fff;--fg:#111418;--mut:#586069;--line:#e3e6ea;--acc:#2563eb;--code:#f4f6f8;--card:#fafbfc}
+@media(prefers-color-scheme:dark){:root{--bg:#0b0d10;--fg:#e8eaed;--mut:#9aa3ad;--line:#232830;--acc:#6ea0ff;--code:#14181d;--card:#10141a}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:focus-visible,button:focus-visible{outline:2px solid var(--acc);outline-offset:2px;border-radius:4px}
+header.bar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:1100px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{font-weight:700;text-decoration:none;color:var(--fg)}
+.bar nav{margin-left:auto;display:flex;gap:16px;font-size:14px}
+.bar nav a{color:var(--mut);text-decoration:none;transition:color .15s}.bar nav a:hover{color:var(--fg)}
+.hero{max-width:1100px;margin:0 auto;padding:48px 16px 24px}
+.hero h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 12px;letter-spacing:-.02em}
+.hero p{color:var(--mut);max-width:70ch;font-size:18px;margin:0 0 24px}
+.install{display:flex;align-items:center;gap:8px;max-width:620px;background:var(--code);border:1px solid var(--line);border-radius:10px;padding:6px 6px 6px 14px}
+.install code{flex:1;overflow-x:auto;white-space:nowrap;font:14px ui-monospace,SFMono-Regular,Menlo,monospace}
+.install button{border:0;background:var(--acc);color:#fff;border-radius:7px;padding:8px 14px;font:600 13px system-ui;cursor:pointer;transition:transform .12s,opacity .12s}
+.install button:hover{opacity:.9}.install button:active{transform:scale(.96)}
+.cta{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.cta a{padding:9px 16px;border:1px solid var(--line);border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;color:var(--fg);transition:border-color .15s,transform .15s}
+.cta a:hover{border-color:var(--acc);transform:translateY(-1px)}.cta a.pri{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.layout{max-width:1100px;margin:0 auto;padding:8px 16px 64px;display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:40px}
+@media(max-width:860px){.layout{grid-template-columns:minmax(0,1fr)}.toc{display:none}}
+.toc{position:sticky;top:76px;align-self:start;font-size:14px;border-left:1px solid var(--line);padding-left:16px}
+.toc p{margin:0 0 8px;font-weight:700;color:var(--mut);text-transform:uppercase;font-size:12px;letter-spacing:.06em}
+.toc ul{list-style:none;margin:0;padding:0}.toc li{margin:6px 0}.toc a{color:var(--mut);text-decoration:none}.toc a:hover{color:var(--fg)}
+main{min-width:0;overflow-wrap:anywhere}main pre code{overflow-wrap:normal}main img{max-width:100%;height:auto}
+main h2{margin-top:2.2em;padding-bottom:.3em;border-bottom:1px solid var(--line)}
+.anchor{margin-left:-1.1em;padding-right:.4em;text-decoration:none;opacity:0;color:var(--mut)}h2:hover .anchor,h3:hover .anchor,h4:hover .anchor{opacity:1}
+pre{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow-x:auto;font-size:14px;line-height:1.5}
+code{font:0.9em ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--code);padding:.15em .35em;border-radius:5px}pre code{background:none;padding:0}
+table{border-collapse:collapse;display:block;overflow-x:auto;max-width:100%}th,td{border:1px solid var(--line);padding:8px 12px;text-align:left}th{background:var(--card)}
+blockquote{margin:1em 0;padding:.2em 1em;border-left:4px solid var(--line);color:var(--mut)}
+footer{border-top:1px solid var(--line);color:var(--mut);font-size:14px}
+.foot-in{max-width:1100px;margin:0 auto;padding:24px 16px;display:flex;gap:16px;flex-wrap:wrap}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}</style>
+</head>
+<body>
+<header class="bar"><div class="bar-in">
+<a class="brand" href="https://nirholas.github.io/create-agent/">@three-ws/create-agent</a>
+<nav aria-label="Project links"><a href="https://github.com/nirholas/create-agent">GitHub</a><a href="https://www.npmjs.com/package/@three-ws/create-agent">npm</a><a href="llms.txt">llms.txt</a><a href="https://three.ws">three.ws</a></nav>
+</div></header>
+<section class="hero">
+<h1>@three-ws/create-agent</h1>
+<p>One command from a sentence to a rigged, animated 3D agent you can embed anywhere. npm create @three-ws/agent &quot;a friendly cartoon astronaut&quot;</p>
+<div class="install" role="group" aria-label="Install command"><code>npx -y @three-ws/create-agent</code><button type="button" data-copy="npx -y @three-ws/create-agent">Copy</button></div>
+<div class="cta"><a class="pri" href="https://github.com/nirholas/create-agent">View on GitHub</a><a href="https://github.com/nirholas/create-agent/stargazers">Star the repo</a></div>
+</section>
+<div class="layout">
+<main id="content"><h1>@three-ws/create-agent</h1>
+<p><strong>One command from a sentence to a rigged 3D character you can put on your site.</strong></p>
+<pre><code class="language-bash">npm create @three-ws/agent &quot;a friendly cartoon astronaut in a glossy white suit&quot;
+</code></pre>
+<pre><code>three.ws building &quot;a friendly cartoon astronaut in a glossy white suit&quot;
+  a rigged humanoid, free lane, no account needed
+
+· sent to the three.ws forge
+· generating the figure (15s)
+· generating the figure, then the skeleton (60s)
+✓ model ready
+· downloading the model
+
+Friendly Cartoon Astronaut is ready in 94s
+
+  folder  a-friendly-cartoon-astronaut/
+          index.html
+          agent.json
+          README.md
+          agent.glb (3.4 MB)
+  viewer  https://three.ws/viewer?src=…
+
+  Paste this anywhere:
+
+  &lt;script type=&quot;module&quot; src=&quot;https://three.ws/agent-3d/latest/agent-3d.js&quot;&gt;&lt;/script&gt;
+
+  &lt;agent-3d body=&quot;https://three.ws/cdn/…/rigged.glb&quot;
+            name=&quot;Friendly Cartoon Astronaut&quot;
+            style=&quot;width:100%;max-width:420px;height:520px&quot;&gt;&lt;/agent-3d&gt;
+
+  Open the demo:  npx serve a-friendly-cartoon-astronaut
+</code></pre>
+<p>No account. No API key. No signup. The generation runs on the three.ws free lane, and the platform&#39;s own provider keys cover it.</p>
+<h2 id="what-you-get"><a class="anchor" href="#what-you-get" aria-label="Link to this section">#</a>What you get</h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>agent.glb</code></td>
+<td>The model, with a humanoid skeleton, so it can be posed and animated. Opens in Blender, Unity, Godot, or any glTF tool.</td>
+</tr>
+<tr>
+<td><code>index.html</code></td>
+<td>A working demo page. Double click it.</td>
+</tr>
+<tr>
+<td><code>agent.json</code></td>
+<td>The record: prompt, hosted URLs, backend, timing.</td>
+</tr>
+<tr>
+<td><code>README.md</code></td>
+<td>How to embed it and where to go next.</td>
+</tr>
+</tbody></table>
+<h2 id="options"><a class="anchor" href="#options" aria-label="Link to this section">#</a>Options</h2>
+<pre><code class="language-bash">npm create @three-ws/agent &quot;a knight in worn steel armor&quot; --out ./knight
+npm create @three-ws/agent --photo https://example.com/me.jpg --name &quot;Me&quot;
+npm create @three-ws/agent &quot;a small ceramic frog figurine&quot; --object
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>--photo &lt;url&gt;</code></td>
+<td>Build from a public https reference image instead of a description</td>
+</tr>
+<tr>
+<td><code>--out &lt;dir&gt;</code></td>
+<td>Where to write the project (default: a slug of the description)</td>
+</tr>
+<tr>
+<td><code>--name &lt;name&gt;</code></td>
+<td>Display name (default: derived from the description)</td>
+</tr>
+<tr>
+<td><code>--object</code></td>
+<td>An object or prop (mesh only, free lane) instead of a rigged character</td>
+</tr>
+<tr>
+<td><code>--no-download</code></td>
+<td>Keep the hosted model URL, skip writing <code>agent.glb</code></td>
+</tr>
+<tr>
+<td><code>--json</code></td>
+<td>Print the result as JSON and nothing else</td>
+</tr>
+<tr>
+<td><code>--origin &lt;url&gt;</code></td>
+<td>API origin (default <code>https://three.ws</code>)</td>
+</tr>
+</tbody></table>
+<p>Describe <strong>one full-body humanoid in a neutral standing pose</strong> for the best rig. Lead with the subject, then materials and colours: the free lane conditions on roughly the first 77 characters, so front-load what matters.</p>
+<h2 id="programmatic-use"><a class="anchor" href="#programmatic-use" aria-label="Link to this section">#</a>Programmatic use</h2>
+<pre><code class="language-js">import { createAgent } from &#39;@three-ws/create-agent&#39;;
+
+const made = await createAgent({
+	prompt: &#39;a friendly cartoon astronaut&#39;,
+	out: &#39;./astro&#39;,
+	onProgress: ({ message }) =&gt; console.log(message),
+});
+
+made.result.glbUrl; // hosted, durable
+made.result.rigged; // true
+made.dir; // absolute path to the project
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Export</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>createAgent(opts)</code></td>
+<td>The whole pipeline: generate, scaffold, download</td>
+</tr>
+<tr>
+<td><code>callForge({ tool, args, ... })</code></td>
+<td>One forge call (<code>forge_avatar</code> or <code>forge_free</code>)</td>
+</tr>
+<tr>
+<td><code>downloadModel(url)</code></td>
+<td>Fetch the model bytes with a deadline</td>
+</tr>
+<tr>
+<td><code>projectFiles(...)</code>, <code>demoPage(...)</code>, <code>embedSnippet(...)</code></td>
+<td>The scaffold, as pure functions</td>
+</tr>
+<tr>
+<td><code>ForgeError</code></td>
+<td>Carries <code>code</code>: <code>timeout</code>, <code>unreachable</code>, <code>no_model</code>, <code>rpc_error</code>, <code>http_&lt;status&gt;</code></td>
+</tr>
+</tbody></table>
+<p>Everything takes <code>{ fetchImpl, signal, origin }</code>, so it runs against a local three.ws, a proxy, or a test double.</p>
+<h2 id="how-long-it-takes"><a class="anchor" href="#how-long-it-takes" aria-label="Link to this section">#</a>How long it takes</h2>
+<p>A rigged character is generation plus rigging, usually one to three minutes; rigging is the slow half. An <code>--object</code> is faster. Every call carries an explicit deadline (10 minutes) and reports real elapsed time, never an invented progress bar. If the deadline hits, the job may still finish: finished models land at <a href="https://three.ws/creations">https://three.ws/creations</a>.</p>
+<h2 id="related"><a class="anchor" href="#related" aria-label="Link to this section">#</a>Related</h2>
+<ul>
+<li>The full pipeline in a browser: <a href="https://three.ws/create">https://three.ws/create</a></li>
+<li><code>&lt;agent-3d&gt;</code> attribute reference: <a href="https://three.ws/docs/web-component">https://three.ws/docs/web-component</a></li>
+<li>Your agent&#39;s live status on a home screen or in a README: <a href="https://github.com/nirholas/create-agent/blob/main/./agent-glance">@three-ws/agent-glance</a></li>
+<li>Docs: <a href="https://three.ws/docs/create-agent">https://three.ws/docs/create-agent</a></li>
+</ul>
+<h2 id="license"><a class="anchor" href="#license" aria-label="Link to this section">#</a>License</h2>
+<p>Apache-2.0</p>
+</main>
+<nav class="toc" aria-label="On this page"><p>On this page</p><ul><li><a href="#what-you-get">What you get</a></li><li><a href="#options">Options</a></li><li><a href="#programmatic-use">Programmatic use</a></li><li><a href="#how-long-it-takes">How long it takes</a></li><li><a href="#related">Related</a></li><li><a href="#license">License</a></li></ul></nav>
+</div>
+<footer><div class="foot-in"><span>Apache-2.0 licensed</span><a href="https://github.com/nirholas/create-agent/issues">Issues</a><a href="https://github.com/nirholas/create-agent/blob/main/CONTRIBUTING.md">Contributing</a><a href="https://github.com/nirholas/create-agent/security/policy">Security</a><a href="https://three.ws">Part of three.ws</a></div></footer>
+<script>document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){
+var t=b.getAttribute('data-copy');var done=function(){var o=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=o},1400)};
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){})}
+else{var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');done()}catch(e){}a.remove()}})});</script>
+</body>
+</html>
