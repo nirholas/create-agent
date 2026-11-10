@@ -6,8 +6,8 @@
     "name": "nirholas"
   },
   "repository": "https://github.com/nirholas/create-agent",
-  "license": "Apache-2.0",
   "homepage": "https://nirholas.github.io/create-agent/",
+  "license": "Apache-2.0",
   "keywords": [
     "text-to-3d",
     "avatar",
